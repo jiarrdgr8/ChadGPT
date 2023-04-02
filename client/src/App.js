@@ -22,7 +22,7 @@ function App() {
   }
 
   function getEngines(){
-    fetch('http://localhost:5000/models')
+    fetch(`${process.env.REACT_APP_API_URL}`)
     .then(res => res.json())
     .then(data => setModels(data.models))
   }
