@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config()
 const port = process.env.PORT || 5000
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const helmet = require("helmet");
 
 const app = express()
 
@@ -14,6 +15,8 @@ const openai = new OpenAIApi(configuration);
 
 app.use(bodyParser.json())
 app.use(cors())
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "https://chad-gpt-client-six.vercel.app"); // Replace with the appropriate domain
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
