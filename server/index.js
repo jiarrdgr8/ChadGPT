@@ -19,7 +19,6 @@ app.use(cors({
 }))
 
 
-
 app.post('/', async (req, res)=>{
     const { message, currentModel, temperature } = req.body
     console.log("message:", message)
