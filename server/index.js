@@ -14,9 +14,10 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.use(bodyParser.json())
-app.use(cors({
-    origin: "https://chad-gpt-client-six.vercel.app/"
-}))
+app.use(cors())
+// app.use(cors({
+//     origin: "https://chad-gpt-client-six.vercel.app/"
+// }))
 
 
 app.post('/', async (req, res)=>{

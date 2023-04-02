@@ -22,7 +22,7 @@ function App() {
   }
 
   function getEngines(){
-    fetch(`${process.env.REACT_APP_API_URL}`)
+    fetch(`https://chadgpt-backend.onrender.com/models`)
     .then(res => res.json())
     .then(data => setModels(data.models))
   }
@@ -41,7 +41,7 @@ function App() {
     console.log(temp)
     console.log(typeof(temp))
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}`, {
+    const response = await fetch(`https://chadgpt-backend.onrender.com/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
